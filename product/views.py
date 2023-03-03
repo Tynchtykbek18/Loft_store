@@ -8,4 +8,4 @@ from .serializers import ProductSerializer
 class ProductView(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    permission_classes = (DjangoModelPermissions,)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
